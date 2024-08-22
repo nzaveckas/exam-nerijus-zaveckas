@@ -6,7 +6,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class RegistrationTest extends BaseTest{
     LoginPage loginPage;
     RegistrationPage registrationPage;
-    String username = "testas"+(int)(Math.random()*100+1);
+    String username = "testas"+(int)(Math.random()*100+2);
     String password = "testas";
 
 //    Positive tests:

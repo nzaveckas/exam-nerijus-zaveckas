@@ -1,8 +1,6 @@
 package lt.techin.nz;
 
 import org.junit.jupiter.api.Test;
-import java.time.Duration;
-import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class CalculationTest extends BaseTest{
