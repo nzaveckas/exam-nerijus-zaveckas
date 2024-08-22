@@ -21,6 +21,12 @@ public class RegistrationPage extends BasePage{
     @FindBy(xpath = "//*[@type='submit']")
     WebElement buttonSubmit;
 
+    @FindBy(id = "username.errors")
+    WebElement errorMessageForUsername;
+
+    @FindBy(id = "password.errors")
+    WebElement errorMessageForPassword;
+
     public void enterUsername(String username) {
         inputUsername.sendKeys(username);
     }
@@ -35,5 +41,13 @@ public class RegistrationPage extends BasePage{
 
     public void clickButtonSubmit() {
         buttonSubmit.click();
+    }
+
+    public String getErrorMessageForUsernameText() {
+        return errorMessageForUsername.getText();
+    }
+
+    public String getErrorMessageForPasswordText() {
+        return errorMessageForPassword.getText();
     }
 }
