@@ -6,5 +6,5 @@ public class PerformedOperationsPage extends BasePage{
     public PerformedOperationsPage(WebDriver driver) {
         super(driver);
     }
-    
+
 }
