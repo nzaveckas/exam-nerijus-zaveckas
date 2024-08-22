@@ -1,5 +1,6 @@
 package lt.techin.nz;
 
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -14,6 +15,7 @@ public class OperationLogsTest extends BaseTest{
 
 //    Positive tests:
 
+    @Tag("PositiveTest")
     @Test
     void testLogOfAddition() {
         loginPage = new LoginPage(driver);

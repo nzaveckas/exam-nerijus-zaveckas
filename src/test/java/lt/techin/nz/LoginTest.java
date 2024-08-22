@@ -1,5 +1,6 @@
 package lt.techin.nz;
 
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -12,6 +13,7 @@ public class LoginTest extends BaseTest{
 
 //    Positive tests:
 
+    @Tag("PositiveTest")
     @Test
     void testPositiveLogin() {
         loginPage = new LoginPage(driver);
@@ -23,6 +25,7 @@ public class LoginTest extends BaseTest{
         assertEquals("http://localhost:8080/", driver.getCurrentUrl(), "URL is not as expected");
     }
 
+    @Tag("PositiveTest")
     @Test
     void testPositiveLogout() {
         loginPage = new LoginPage(driver);
