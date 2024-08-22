@@ -3,6 +3,10 @@ package lt.techin.nz;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.Wait;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
 
 public class LoginPage extends BasePage{
     public LoginPage(WebDriver driver) {
@@ -19,7 +23,10 @@ public class LoginPage extends BasePage{
     WebElement inputPassword;
 
     @FindBy(xpath = "//*[@type='submit']")
-    WebElement buttonSubmit;
+    WebElement buttonLogin;
+
+    @FindBy(xpath = "//div/span[2]")
+    WebElement errorMessage;
 
     public void clickLinkCreateNewAccount() {
         linkCreateNewAccount.click();
@@ -33,7 +40,11 @@ public class LoginPage extends BasePage{
         inputPassword.sendKeys(password);
     }
 
-    public void clickButtonSubmit() {
-        buttonSubmit.click();
+    public void clickButtonLogin() {
+        buttonLogin.click();
+    }
+
+    public String getErrorMessageText() {
+        return errorMessage.getText();
     }
 }

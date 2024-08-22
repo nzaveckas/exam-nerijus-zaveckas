@@ -9,6 +9,8 @@ public class RegistrationTest extends BaseTest{
     String username = "testas"+(int)(Math.random()*100+1);
     String password = "testas";
 
+//    Positive tests:
+
     @Test
     void testPositiveRegistration() {
         loginPage = new LoginPage(driver);
