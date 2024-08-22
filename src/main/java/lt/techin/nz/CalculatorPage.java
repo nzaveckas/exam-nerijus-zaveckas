@@ -15,7 +15,7 @@ public class CalculatorPage extends BasePage{
     @FindBy(xpath = "//*[text()='Atliktos operacijos']")
     WebElement tabPerformedOperations;
 
-    @FindBy(id = "logoutForm")
+    @FindBy(css = "[onclick]")
     WebElement linkLogout;
 
     @FindBy(id = "sk1")
@@ -33,10 +33,10 @@ public class CalculatorPage extends BasePage{
     @FindBy(xpath = "//*[@value='-']")
     WebElement optionMinus;
 
-    @FindBy(xpath = "//*[@value='/']")
+    @FindBy(xpath = "//*[@value='*']")
     WebElement optionMultiplication;
 
-    @FindBy(xpath = "//*[@value='*']")
+    @FindBy(xpath = "//*[@value='/']")
     WebElement optionDivision;
 
     @FindBy(xpath = "//*[@type='submit']")
@@ -55,10 +55,12 @@ public class CalculatorPage extends BasePage{
     }
 
     public void enterInputFirstNumber(int firstNumber) {
+        inputFirstNumber.clear();
         inputFirstNumber.sendKeys(Integer.toString(firstNumber));
     }
 
-    public void setInputSecondNumber(int secondNumber) {
+    public void enterInputSecondNumber(int secondNumber) {
+        inputSecondNumber.clear();
         inputSecondNumber.sendKeys(Integer.toString(secondNumber));
     }
 
