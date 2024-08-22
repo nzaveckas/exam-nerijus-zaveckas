@@ -22,7 +22,6 @@ public class BaseTest {
 
     @AfterEach
     void tearDown() throws InterruptedException {
-        Thread.sleep(Duration.ofSeconds(2)); //delete after coding
         driver.quit();
     }
 }
