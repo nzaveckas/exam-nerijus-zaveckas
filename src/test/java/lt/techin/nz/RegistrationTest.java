@@ -40,4 +40,46 @@ public class RegistrationTest extends BaseTest{
         assertEquals("Šį laukelį būtina užpildyti\n"+"Privaloma įvesti nuo 3 iki 32 simbolių", registrationPage.getErrorMessageForUsernameText(), "Error message is not as expected");
         assertEquals("Šį laukelį būtina užpildyti\n"+"Privaloma įvesti bent 3 simbolius", registrationPage.getErrorMessageForPasswordText(), "Error message is not as expected");
     }
+
+    @Test
+    void testRegistrationWithEmptyUsername() {
+        loginPage = new LoginPage(driver);
+        registrationPage = new RegistrationPage(driver);
+
+        loginPage.clickLinkCreateNewAccount();
+        registrationPage.enterUsername("");
+        registrationPage.enterPassword(password);
+        registrationPage.enterPasswordConfirm(password);
+        registrationPage.clickButtonSubmit();
+
+        assertEquals("Šį laukelį būtina užpildyti\n"+"Privaloma įvesti nuo 3 iki 32 simbolių", registrationPage.getErrorMessageForUsernameText(), "Error message is not as expected");
+    }
+
+    @Test
+    void testRegistrationWithEmptyPassword() {
+        loginPage = new LoginPage(driver);
+        registrationPage = new RegistrationPage(driver);
+
+        loginPage.clickLinkCreateNewAccount();
+        registrationPage.enterUsername(username);
+        registrationPage.enterPassword("");
+        registrationPage.enterPasswordConfirm("");
+        registrationPage.clickButtonSubmit();
+
+        assertEquals("Šį laukelį būtina užpildyti\n"+"Privaloma įvesti bent 3 simbolius", registrationPage.getErrorMessageForPasswordText(), "Error message is not as expected");
+    }
+
+    @Test
+    void testRegistrationWithEmptyPasswordConfirm() {
+        loginPage = new LoginPage(driver);
+        registrationPage = new RegistrationPage(driver);
+
+        loginPage.clickLinkCreateNewAccount();
+        registrationPage.enterUsername(username);
+        registrationPage.enterPassword(password);
+        registrationPage.enterPasswordConfirm("");
+        registrationPage.clickButtonSubmit();
+
+        assertEquals("Įvesti slaptažodžiai nesutampa", registrationPage.getErrorMessageForPasswordConfirmText(), "Error message is not as expected");
+    }
 }

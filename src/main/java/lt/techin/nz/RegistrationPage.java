@@ -27,6 +27,9 @@ public class RegistrationPage extends BasePage{
     @FindBy(id = "password.errors")
     WebElement errorMessageForPassword;
 
+    @FindBy(id = "passwordConfirm.errors")
+    WebElement errorMessageForPasswordConfirm;
+
     public void enterUsername(String username) {
         inputUsername.sendKeys(username);
     }
@@ -49,5 +52,9 @@ public class RegistrationPage extends BasePage{
 
     public String getErrorMessageForPasswordText() {
         return errorMessageForPassword.getText();
+    }
+
+    public String getErrorMessageForPasswordConfirmText() {
+        return errorMessageForPasswordConfirm.getText();
     }
 }
